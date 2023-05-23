@@ -27,7 +27,7 @@ public class VehicleController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Vehicle> get(@RequestParam UUID id) {
+    public ResponseEntity<Vehicle> get(@PathVariable UUID id) {
         return new ResponseEntity<>(vehicleService.getVehicleById(id), HttpStatus.FOUND);
     }
 
