@@ -14,9 +14,9 @@ public class SampleDataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        List<Customer> customers = List.of(
-            Customer.builder().firstName("John").lastName("Doe").build(),
-            Customer.builder().firstName("Jane").lastName("Doe").build()
+        List<CustomerRequestDTO> customers = List.of(
+            CustomerRequestDTO.builder().firstName("John").lastName("Doe").build(),
+            CustomerRequestDTO.builder().firstName("Jane").lastName("Doe").build()
         );
 
         customers.forEach(customerService::createCustomer);

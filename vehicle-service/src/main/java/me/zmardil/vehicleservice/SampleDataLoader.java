@@ -15,10 +15,10 @@ public class SampleDataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        List<Vehicle> vehicles = List.of(
-            Vehicle.builder().brand("Toyota").model("Corolla").year(Year.of(2017)).type("Sedan") .build(),
-            Vehicle.builder().brand("Ford").model("Ranger").year(Year.of(2018)).type("Truck") .build(),
-            Vehicle.builder().brand("Land Rover").model("Range Rover").year(Year.of(2022)).type("SUV") .build()
+        List<VehicleRequestDTO> vehicles = List.of(
+            VehicleRequestDTO.builder().brand("Toyota").model("Corolla").year(Year.of(2017)).type("Sedan") .build(),
+            VehicleRequestDTO.builder().brand("Ford").model("Ranger").year(Year.of(2018)).type("Truck") .build(),
+            VehicleRequestDTO.builder().brand("Land Rover").model("Range Rover").year(Year.of(2022)).type("SUV") .build()
         );
 
         vehicles.forEach(vehicleService::createVehicle);

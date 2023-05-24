@@ -7,15 +7,15 @@ logging:
 #        SQL: DEBUG
 
 server:
-  port: 8082
+  port: 8083
   servlet:
     context-path: /api/v1
 
 spring:
   application:
-    name: customer-service
+    name: booking-service
   datasource:
-    url: jdbc:mysql://localhost:3306/customer-service?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/booking-service?createDatabaseIfNotExist=true
     username: root
     password:
   jpa:
@@ -31,7 +31,8 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     topic:
-      name: notification-topic
+      name: vehicle-topic
+
 
 eureka:
   client:
