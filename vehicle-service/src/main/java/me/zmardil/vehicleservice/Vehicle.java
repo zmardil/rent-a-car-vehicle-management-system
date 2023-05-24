@@ -1,9 +1,8 @@
 package me.zmardil.vehicleservice;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import me.zmardil.vehicleservice.shared.Status;
 
 import java.time.Year;
 import java.util.UUID;
@@ -21,4 +20,6 @@ public class Vehicle {
     private String model;
     private Year year;
     private String type;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }
