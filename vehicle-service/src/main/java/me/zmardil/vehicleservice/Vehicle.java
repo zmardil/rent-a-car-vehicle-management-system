@@ -21,5 +21,6 @@ public class Vehicle {
     private Year year;
     private String type;
     @Enumerated(EnumType.STRING)
-    private Status status;
+    @Builder.Default
+    private Status status = Status.AVAILABLE;
 }

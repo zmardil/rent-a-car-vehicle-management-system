@@ -1,4 +1,4 @@
-package me.zmardil.customerservice;
+package me.zmardil.bookingservice;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,21 +14,21 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class CustomerProducer {
+public class BookingProducer {
     private final NewTopic topic;
 
     private final ObjectMapper mapper;
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public void sendMessage(CustomerEvent customerEvent, String eventType) {
-        log.info("Customer event : {}", customerEvent);
+    public void sendMessage(NotificationEvent notificationEvent, String eventType) {
+        log.info("Notification sent ---> {}", notificationEvent.getMessage());
 
         String payload;
         try {
-            payload = mapper.writeValueAsString(customerEvent);
+            payload = mapper.writeValueAsString(notificationEvent);
         } catch (JsonProcessingException e) {
-            log.error("Error serializing customer event to JSON: ", e);
+            log.error("Error serializing Shift to JSON", e);
             return;
         }
 

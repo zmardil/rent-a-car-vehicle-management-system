@@ -31,4 +31,9 @@ public class VehicleController {
         return new ResponseEntity<>(vehicleService.getVehicleById(id), HttpStatus.FOUND);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Vehicle> put(@PathVariable UUID id, @RequestBody VehicleRequestDTO vehicleRequestDTO) {
+        return new ResponseEntity<>(vehicleService.putVehicleById(id, vehicleRequestDTO), HttpStatus.ACCEPTED);
+    }
+
 }
